@@ -3,6 +3,7 @@ services:
     image: mirisbowring/texlive_ctan_full:2019
     # build:
     #   context: .
+    user: ${MY_UID}:${MY_GID}
     volumes:
     - ../../:/build
     - ../tmp/data/:/data/
