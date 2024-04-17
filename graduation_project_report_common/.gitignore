@@ -1,4 +1,3 @@
-/build/*
-/config/*.sty
+/config
 /tmp/*/*
 !.gitkeep

@@ -1,10 +1,9 @@
-all: ../../config/env.diplom.sty ../../build/.gitignore
+all: ../config/env.diplom.sty ../../_build/EXISTS
 
-../../config/env.diplom.sty: cfggen.py ../../config.json
-	mkdir -p ../../config
-	echo "*\n!.gitignore" > ../../config/.gitignore
-	python3 cfggen.py || rm -f ../../config/env.diplom.sty
+../config/env.diplom.sty: cfggen.py ../../config.json
+	mkdir -p ../config
+	python3 cfggen.py || rm -f ../config/env.diplom.sty
 
-../../build/.gitignore:
-	mkdir -p ../../build
-	echo "*\n!.gitignore" > ../../build/.gitignore
+../../_build/EXISTS:
+	mkdir -p ../../_build
+	touch ../../_build/EXISTS

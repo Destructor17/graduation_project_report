@@ -3,7 +3,7 @@ import json
 with open("../../config.json", "r") as file:
     config = json.load(file)
 
-with open("../../config/env.diplom.sty", "w") as file:
+with open("../config/env.sty", "w") as file:
     # config['department']['']
     recendentMoreInfo = "\n    ".join(config["recendent"]["moreInfo"])
     file.write(
@@ -53,13 +53,8 @@ with open("../../config/env.diplom.sty", "w") as file:
 \def \envDiplomHeadDepartmentInfo {{{config['department']['info']}}}
 
 \def \envDiplomDateInput{{<<\\underline{{\hspace{{0.5cm}}}}>> \\underline{{\hspace{{2cm}}}} \ESKDtheYear~г.}}
-"""
-    )
 
-with open("../../config/env.sty", "w") as file:
-    # config['department']['']
-    file.write(
-        f"""\def \\No {{\\textnumero}}
+\def \\No {{\\textnumero}}
 \date {{{config["year"]}/месяц/день}}
 """
     )
