@@ -1,0 +1,15 @@
+\usepackage{config/env}
+\usepackage{config/env.diplom}
+
+\def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~94~\envDiplomVersion}
+\def \envDiplomDocumentTitle {РЕЗУЛЬТАТЫ ИСПЫТАНИЯ СИСТЕМЫ}
+
+\ESKDletter{}{Д}{П}
+\ESKDcolumnI {\ESKDfontIII \envDiplomTitle \\ \envDiplomDocumentTitle} % наименование изделия/документа
+\ESKDsignature {\envCode} % обозначение документа
+\ESKDcolumnIX {\ESKDfontV \envDiplomEnterprice} % наименование или различительный индекс предприятия
+\ESKDcolumnXIfI {\ESKDfontII\envDiplomStudentSurname~\envDiplomStudentInitials} % Разраб.
+\ESKDcolumnXIfII {\ESKDfontII \envDiplomTeacherSurname~\envDiplomTeacherInitials} % Пров.
+\ESKDcolumnXIfIV {} % (пустая строка после Пров. и перед Н. контр.)
+\ESKDcolumnXIfV {\ESKDfontII \envDiplomEspdSurname~\envDiplomEspdInitials} % Н. контр.
+\ESKDcolumnXIfVI {\ESKDfontII \envDiplomHeadCathedraSurname~\envDiplomHeadDepartmentInitials} % Утв.

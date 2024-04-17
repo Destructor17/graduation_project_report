@@ -1,0 +1,32 @@
+% \usepackage{enumitem}
+% \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=0ex,parsep=1ex}
+
+\usepackage{enumitem}
+\setitemize[1]{leftmargin=2cm,topsep=0pt}
+\setitemize[2]{leftmargin=1cm,topsep=0pt}
+
+% \renewenvironment{itemize}{
+%     \begin{list}{\labelitemi}{
+%     \setlength{\topsep}{0pt}
+%     \setitemize[1]{leftmargin=2cm}
+%     % \setlength{\partopsep}{0pt}
+%     % \setlength{\parskip}{0pt}
+%     % \setlength{\itemsep}{0pt}
+%     % \setlength{\parsep}{0pt}
+%     }
+% }{\end{list}}
+
+% \renewcommand{\labelitemi}{$\bullet$}
+% \renewcommand{\labelitemii}{$\bullet$}
+% \renewcommand{\labelitemiii}{$\bullet$}
+% \renewcommand{\labelitemiv}{$\bullet$}
+
+\renewenvironment{enumerate}{
+  \begin{list}{\labelitemi}{
+  \setlength{\topsep}{0pt}
+  % \setlength{\partopsep}{0pt}
+  % \setlength{\parskip}{0pt}
+  % \setlength{\itemsep}{0pt}
+  % \setlength{\parsep}{0pt}
+  }
+}{\end{list}}

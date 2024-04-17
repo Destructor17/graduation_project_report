@@ -1,0 +1,358 @@
+Swagger UI - это инструмент для визуализации и тестирования RESTful API,
+который позволяет легко и удобно отображать документацию API в интерактивном формате.
+Swagger UI позволяет пользователям легко узнать, как использовать API, просматривать доступные методы и параметры, а также тестировать их напрямую из интерфейса.
+
+NestJS предоставляет мощный интегрированный инструмент для создания и документирования API - Swagger Module.
+Этот модуль автоматически генерирует документацию API на основе встроенных декораторов и аннотаций,
+что делает процесс создания документации проще и быстрее.
+Кроме того, Swagger Module позволяет легко интегрировать Swagger UI в приложение,
+чтобы пользователи могли удобно просматривать и тестировать API.
+
+При использовании NestJS и Swagger Module, можено значительно сократить время и усилия,
+затрачиваемые на создание и документирование API.
+NestJS обеспечивает простоту и гибкость при создании API, а Swagger Module делает процесс документирования быстрым и удобным.
+Кроме того, Swagger UI предоставляет простой и понятный интерфейс для тестирования API,
+что делает процесс отладки более эффективным. Все это делает NestJS лучшим выбором для создания и документирования API,
+особенно если хотим сэкономить время и усилия при разработке.
+
+Эндпоинт (англ. endpoint) - это конечная точка (адрес) веб-сервера, доступная для запросов от клиентского приложения.
+В контексте веб-разработки эндпоинт обычно является частью RESTful API (Representational State Transfer API)
+и представляет собой конечную точку, к которой можно отправить запросы для выполнения определенного действия или получения определенной информации.
+
+Например, если мы хотим получить информацию о товаре с определенным идентификатором,
+мы можем отправить запрос на эндпоинт веб-сервера, который обрабатывает такие запросы и возвращает запрашиваемую информацию в определенном формате,
+например, JSON или XML.
+
+Эндпоинт может обрабатывать различные типы запросов, такие как GET, POST, PATCH, PUT или DELETE,
+в зависимости от того, какие действия должны быть выполнены с данными на сервере.
+Кроме того, эндпоинт может быть защищен авторизацией, чтобы предотвратить несанкционированный доступ к конфиденциальным данным или функциональности.
+
+Эндпоинт <<users>> связан с управлением учётными записями пользователей.
+Благодаря данному эндпоинту, пользователи имеют возможность выполнять следующие операции:
+регистрацию новой учётной записи,
+активацию аккаунта,
+запрос на смену электронной почты,
+подтверждение смены адреса электронной почты,
+отмену запроса на смену адреса электронной почты,
+восстановление забытого пароля,
+а также изменение пароля текущей учётной записи.
+
+Эндпоинт <<users>> представлен на рис.~\ref{fig:swagger_users}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=12cm]
+    {images/swagger/users.png}
+
+    \caption{Эндпоинт <<users>>}
+
+    \label{fig:swagger_users}
+\end{figure}
+
+Эндпоинт <<sessions>> в приложении играет важную роль,
+предоставляя возможность пользователям войти в свой аккаунт и получить доступ к различным функциям.
+С помощью этого эндпоинта можно получить доступ к списку активных сессий,
+обновить существующую сессию для получения нового токенов доступа.
+Также эндпоинт <<sessions>> позволяет закрыть текущую сессию или все активные сессии,
+что обеспечивает безопасность аккаунта пользователя.
+В целом, этот эндпоинт является важным инструментом для управления сессиями пользователей и обеспечения безопасности данных в приложении.
+
+Эндпоинт <<sessions>> представлен на рис.~\ref{fig:swagger_sessions}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=12cm]
+    {images/swagger/sessions.png}
+
+    \caption{Эндпоинт <<sessions>>}
+
+    \label{fig:swagger_sessions}
+\end{figure}
+
+Эндпоинт item-brands предназначен для осуществления операций CRUD (Create, Read, Update, Delete) с производителями номенклатуры.
+Здесь вы можете создавать новых производителей, просматривать информацию о них, обновлять данные и удалять производителей, если это необходимо
+
+Эндпоинт <<item-brands>> представлен на рис.~\ref{fig:swagger_item_brands}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=12cm]
+    {images/swagger/item-brands.png}
+
+    \caption{Эндпоинт <<item-brands>>}
+
+    \label{fig:swagger_item_brands}
+\end{figure}
+
+Эндпоинт item-categories предназначен для управления категориями номенклатуры,
+включающего в себя операции CRUD (Create, Read, Update, Delete).
+Здесь вы сможете создавать, просматривать, обновлять и удалять категории, а также получать информацию о них.
+
+Эндпоинт <<item-brands>> представлен на рис.~\ref{fig:swagger_item_categories}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=12cm]
+    {images/swagger/item-categories.png}
+
+    \caption{Эндпоинт <<item-categories>>}
+
+    \label{fig:swagger_item_categories}
+\end{figure}
+
+Эндпоинт <<item-characteristics>> обеспечивает набор CRUD-операций для типов характеристик номенклатуры.
+
+Эндпоинт <<item-characteristics>> представлен на рис.~\ref{fig:swagger_item_characteristics}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/item-characteristics.png}
+
+    \caption{Эндпоинт <<item-characteristics>>}
+
+    \label{fig:swagger_item_characteristics}
+\end{figure}
+
+Эндпоинт <<items>> представляет набор операций CRUD для управления номенклатурой.
+Кроме того, он позволяет добавлять и редактировать табличные части, включая список характеристик номенклатуры и ссылок на картинки.
+Это дает возможность удобно и эффективно управлять всей информацией, связанной с конкретной номенклатурой в едином месте.
+
+Эндпоинт <<items>> представлен на рис.~\ref{fig:swagger_items}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/items.png}
+
+    \caption{Эндпоинт <<items>>}
+
+    \label{fig:swagger_items}
+\end{figure}
+
+Эндпоинт <<articles>> предоставляет возможность выполнения операций CRUD (Create, Read, Update, Delete) для управления статьями в приложении,
+такими как новости или блог.
+С помощью этого эндпоинта можно создавать, читать, обновлять и удалять статьи,
+а также получать список всех статей или выборочно по фильтру.
+
+Эндпоинт <<articles>> представлен на рис.~\ref{fig:swagger_articles}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/articles.png}
+
+    \caption{Эндпоинт <<articles>>}
+
+    \label{fig:swagger_articles}
+\end{figure}
+
+Эндпоинт <<contact-types>> представляет собой CRUD-интерфейс для управления типами контактов,
+таких как email, phone, viber, whatsapp, telegram, skype.
+Они являются ключевыми элементами для связи многих к одному и многих ко многим.
+
+Эндпоинт <<contact-types>> представлен на рис.~\ref{fig:swagger_contact_types}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/contact-types.png}
+
+    \caption{Эндпоинт <<contact-types>>}
+
+    \label{fig:swagger_contact_types}
+\end{figure}
+
+Эндпоинт <<helpers>> представляет полноценный CRUD-интерфейс для создания и управления контактами,
+которые помогают клиентам быстро и легко связаться с компанией.
+Этот эндпоинт также включает в себя удобную табличную часть,
+которая позволяет добавлять и редактировать различные типы контактов,
+такие как email, phone, viber, whatsapp, telegram, skype, для удобства клиентов.
+
+Эндпоинт <<helpers>> представлен на рис.~\ref{fig:swagger_helpers}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/helpers.png}
+
+    \caption{Эндпоинт <<helpers>>}
+
+    \label{fig:swagger_helpers}
+\end{figure}
+
+Эндпоинт <<orders>> представляет собой важный механизм оформления заказов.
+Он позволяет пользователям отправлять заявки на приобретение товаров,
+которые затем записываются в базу данных.
+Кроме того, эндпоинт позволяет отменять заказы и помечать их как закрытые модераторами, когда номенклатура уже доставлена. 
+
+Эндпоинт <<orders>> представлен на рис.~\ref{fig:swagger_orders}.
+Экраны с номенклатурой на Android изображены на рис.~\ref{fig:android_items}.
+Экраны со статьями на Android изображены на рис.~\ref{fig:android_articles}.
+Экраны с корзиной и указанием количества изображены на рис.~\ref{fig:android_basket}.
+Экраны с входом в аккаунт, восстановлением пароля и проверки обновления изображены на рис.~\ref{fig:android_login}.
+Экраны с регистрацией юридического лица изображены на рис.~\ref{fig:android_registration}.
+
+\begin{figure}[!p]
+    \centering
+
+    \includegraphics[width=16cm]
+    {images/swagger/orders.png}
+
+    \caption{Эндпоинт <<orders>>}
+
+    \label{fig:swagger_orders}
+\end{figure}
+
+\begin{figure}[!p]\centering
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=7cm]
+        {images/android/item-brands.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=7cm]
+        {images/android/item-categories.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=7cm]
+        {images/android/items.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=7cm]
+        {images/android/item.jpg}
+    \end{minipage}
+
+    \caption{Производители, категории, товары и сам товар}
+    \label{fig:android_items}
+\end{figure}
+
+\begin{figure}[!p]\centering
+    \begin{minipage}{0.19\textwidth}
+        \centering
+
+        \includegraphics[width=.99\linewidth]
+        {images/android/articles.jpg}
+    \end{minipage}
+    \begin{minipage}{0.19\textwidth}
+        \centering
+
+        \includegraphics[width=.99\linewidth]
+        {images/android/article-prices.jpg}
+    \end{minipage}
+    \begin{minipage}{0.19\textwidth}
+        \centering
+
+        \includegraphics[width=.99\linewidth]
+        {images/android/article-catalogs.jpg}
+    \end{minipage}
+    \begin{minipage}{0.19\textwidth}
+        \centering
+
+        \includegraphics[width=.99\linewidth]
+        {images/android/article-certificates.jpg}
+    \end{minipage}
+    \begin{minipage}{0.19\textwidth}
+        \centering
+
+        \includegraphics[width=.99\linewidth]
+        {images/android/article-contacts.jpg}
+    \end{minipage}
+
+    \caption{Прайсы, каталоги, сертификаты, контакты}
+    \label{fig:android_articles}
+\end{figure}
+
+\begin{figure}[!p]\centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+
+        \includegraphics[height=6cm]
+        {images/android/basket.jpg}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+
+        \includegraphics[height=6cm]
+        {images/android/basket-change.jpg}
+    \end{minipage}
+
+    \caption{Корзина}
+    \label{fig:android_basket}
+\end{figure}
+
+\begin{figure}[!p]\centering
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=9cm]
+        {images/android/account.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=9cm]
+        {images/android/account-login.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=9cm]
+        {images/android/account-forget-password.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=9cm]
+        {images/android/account-versions.jpg}
+    \end{minipage}
+
+    \caption{Вход в аккаунт, восстановление пароля, проверка новой версии}
+    \label{fig:android_login}
+\end{figure}
+
+\begin{figure}[!p]\centering
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=10cm]
+        {images/android/account-registration-step1.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=10cm]
+        {images/android/account-registration-step2.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=10cm]
+        {images/android/account-registration-step3.jpg}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+
+        \includegraphics[height=10cm]
+        {images/android/account-registration-step4.jpg}
+    \end{minipage}
+
+    \caption{Регистрация юридического лица}
+    \label{fig:android_registration}
+\end{figure}

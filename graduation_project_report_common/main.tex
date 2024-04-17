@@ -1,12 +1,12 @@
-\documentclass[12pt]{article}
+\documentclass[
+  14pt, % Устанавливает размер шрифта документа (12pt, 14pt)
+  a4paper, % Лист А4
+  simple, % Тоже самое что nocolumnsxix, nocolumnxxxi и nocolumnxxxii
+  floatsection % Счётчик рисунков обнуляется каждую главу и нумеруется с номером главы, например, Рисунок 2.1
+]{eskdtext}
 
-\usepackage[default]{droidserif}
-\usepackage[defaultsans]{droidsans}
+\usepackage{graduation_project_report_common/include/81/_preamble}
 
 \begin{document}
-
-\section*{Введение}
-
-\input{../intro.tex}
-
+  \input{graduation_project_report_common/include/81/_body.tex}
 \end{document}

@@ -1,7 +1,9 @@
 services:
   builder:
-    build:
-      context: .
+    image: mirisbowring/texlive_ctan_full:2019
+    # build:
+    #   context: .
     volumes:
     - ../../:/build
- 
+    - ../tmp/data/:/data/
+    - ../tmp/temp/:/temp/

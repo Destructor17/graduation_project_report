@@ -1,0 +1,216 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "properties": {
+        "ministry": {
+            "default": "МИНИСТЕРСТВО ОБРАЗОВАНИЯ РЕСПУБЛИКИ БЕЛАРУСЬ",
+            "type": "string"
+        },
+        "education": {
+            "default": "УЧРЕЖДЕНИЕ ОБРАЗОВАНИЯ",
+            "type": "string"
+        },
+        "university": {
+            "default": "<<БРЕСТСКИЙ ГОСУДАРСТВЕННЫЙ ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ>>",
+            "type": "string"
+        },
+        "cathedra": {
+            "default": "КАФЕДРА ИНТЕЛЛЕКТУАЛЬНЫХ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ",
+            "type": "string"
+        },
+        "title": {
+            "default": "МОБИЛЬНОЕ ПРИЛОЖЕНИЕ ПО ФОРМИРОВАНИЮ ЗАЯВОК ТОВАРОВ ДЛЯ ООО <<ДЕ-ПА>>",
+            "type": "string"
+        },
+        "enterprise": {
+            "default": "УО <<БрГТУ>>",
+            "type": "string"
+        },
+        "number": {
+            "default": "09",
+            "type": "string"
+        },
+        "version": {
+            "default": "03",
+            "type": "string"
+        },
+        "city": {
+            "default": "Брест",
+            "type": "string"
+        },
+        "student": {
+            "type": "object",
+            "default": {
+                "info": "Выполнил",
+                "surname": "Галанин",
+                "initials": "П. И.",
+                "card": "190333",
+                "groupName": "ПО",
+                "groupNumber": "4"
+            },
+            "properties": {
+                "groupName": {
+                    "default": "ПО",
+                    "type": "string"
+                },
+                "groupNumber": {
+                    "default": "4",
+                    "type": "string"
+                },
+                "card": {
+                    "default": "190333",
+                    "type": "string"
+                },
+                "surname": {
+                    "default": "Галанин",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "П. И.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "Выполнил",
+                    "type": "string"
+                }
+            }
+        },
+        "teacher": {
+            "type": "object",
+            "default": {
+                "info": "Руководитель",
+                "surname": "Соловчук",
+                "initials": "А. М."
+            },
+            "properties": {
+                "surname": {
+                    "default": "Соловчук",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "А. М.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "Руководитель",
+                    "type": "string"
+                }
+            }
+        },
+        "economic": {
+            "type": "object",
+            "default": {
+                "info": "по экономическому разделу",
+                "initials": "Н. Г.",
+                "surname": "Надеина"
+            },
+            "properties": {
+                "surname": {
+                    "default": "Надеина",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "Н. Г.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "по экономическому разделу",
+                    "type": "string"
+                }
+            }
+        },
+        "espd": {
+            "type": "object",
+            "default": {
+                "info": "по ЕСПД",
+                "initials": "Е. В.",
+                "surname": "Михно"
+            },
+            "properties": {
+                "surname": {
+                    "default": "Михно",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "Е. В.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "по ЕСПД",
+                    "type": "string"
+                }
+            }
+        },
+        "recendent": {
+            "type": "object",
+            "default": {
+                "info": "Рецензент",
+                "surname": "Парфомук",
+                "initials": "С. И.",
+                "moreInfo": [
+                    "заведующий кафедры информатики и прикладной математики,",
+                    "кандидат технических наук,",
+                    "доцент",
+                    "учереждения образования",
+                    "<<Брестский государственный технический универсистет>>"
+                ]
+            },
+            "properties": {
+                "surname": {
+                    "default": "Парфомук",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "С. И.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "Рецензент",
+                    "type": "string"
+                },
+                "moreInfo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "заведующий кафедры информатики и прикладной математики,",
+                        "кандидат технических наук,",
+                        "доцент",
+                        "учереждения образования",
+                        "<<Брестский государственный технический универсистет>>"
+                    ]
+                }
+            }
+        },
+        "department": {
+            "type": "object",
+            "default": {
+                "info": "Заведующий кафедрой ИИТ",
+                "initials": "В. А.",
+                "surname": "Головко"
+            },
+            "properties": {
+                "surname": {
+                    "default": "Головко",
+                    "type": "string"
+                },
+                "initials": {
+                    "default": "В. А.",
+                    "type": "string"
+                },
+                "info": {
+                    "default": "Заведующий кафедрой ИИТ",
+                    "type": "string"
+                }
+            }
+        },
+        "year": {
+            "type": "string",
+            "default": "2024"
+        }
+    },
+    "required": [
+        "ministr",
+        "education"
+    ]
+}

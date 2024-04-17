@@ -1,0 +1,166 @@
+\subsection{Участники системы и их взаимодействие}
+
+Эндпоинт - конечная точка веб-приложения или API для доступа к ресурсам или операций.
+Он представляет собой URL-адрес, через который можно отправлять запросы и получать ответы от сервера.
+
+HTTP-статусы - числовые коды, возвращаемые в ответ на HTTP-запросы,
+чтобы указать состояние выполнения запроса или передать дополнительную информацию о результате операции.
+% Каждый статус имеет свою семантику, например, 200 (OK) указывает на успешное выполнение запроса,
+% а 404 (Not Found) означает, что запрашиваемый ресурс не найден.
+
+% Методы - операции или действия, выполняемые с использованием HTTP-протокола.
+
+Методы в контексте HTTP-протокола представляют собой определенные действия или операции,
+которые могут быть выполнены для обмена информацией между клиентом и сервером.
+Они определяют тип запроса и указывают на необходимые действия, такие как получение данных (GET), отправка данных (POST), обновление данных (PUT), удаление данных (DELETE) и другие.
+
+Перечень HTTP запросов для разрабатываемого приложения и соответствующие им роли приведены в таблице~\ref{tabl:swagger}.
+
+\begin{sidewaystable}
+    \small
+    \caption{Участники системы и их взаимодействие} \label{tabl:swagger}
+
+    \begin{tabular}{|p{1cm}|p{1cm}|p{8.5cm}|p{4.8cm}|p{8cm}|}
+        \hline
+        \multicolumn{1}{|c|}{Роль}
+        & \multicolumn{1}{c|}{Метод}
+        & \multicolumn{1}{c|}{Эндпоинт}
+        & \multicolumn{1}{c|}{HTTP статус}
+        & \multicolumn{1}{c|}{Назначение}
+        \\ \hline
+
+        any & post & /api/v1/users & 200, 409, 500 & регистрация \\ \hline 
+        admin & get & /api/v1/users & 200, 401, 404, 500 & получение списка пользователей \\ \hline 
+        any & get & /api/v1/users/activate-account/\{token\} & 200, 404, 500 & активация аккаунта \\ \hline 
+        user & patch & /api/v1/users/change-email & 200, 401, 409, 429, 500 & запрос на смену email \\ \hline 
+        any & get & /api/v1/users/change-email/\{token\}/confirm & 200, 404, 500 & подтверждение смены email \\ \hline 
+        any & get & /api/v1/users/change-email/\{token\}/delete & 200, 404, 500 & отмена смены email \\ \hline 
+        any & post & /api/v1/users/forget-password & 200, 409, 500 & запросить логин и новый пароль \\ \hline 
+        user & patch & /api/v1/users/change-password & 200, 401, 409, 500 & смена пароля \\ \hline
+        admin & post & /api/v1/users/is-admin & 200, 401, 500 & проверка роли администратора\\ \hline 
+        any & post & /api/v1/sessions & 201, 409, 500 & вход в аккаунт \\ \hline 
+        user & get & /api/v1/sessions & 200, 401, 500 & получаем список сессий \\ \hline 
+        any & patch & /api/v1/sessions & 200, 401, 500 & обновление токена доступа \\ \hline 
+        user & delete & /api/v1/sessions & 200, 401, 500 & закрытие всех сессий \\ \hline 
+        user & post & /api/v1/sessions/logout & 200, 500 & выход с аккаунта \\ \hline 
+        user & delete & /api/v1/sessions/\{id\} & 200, 401, 500 & закрытие сессий по id \\ \hline 
+        any & get & /api/v1/apk-versions & 200, 500 & получить последнию версию apk \\ \hline 
+        admin & post & /api/v1/item-characteristics & 201, 400, 401, 409, 500 & создание характеристики \\ \hline 
+        any & get & /api/v1/item-characteristics & 200, 500 & просмотр списка характеристик \\ \hline 
+        admin & post & /api/v1/item-characteristics/bulk & 201, 400, 401, 409, 500 & добавление несколько записей за раз \\ \hline 
+        admin & put & /api/v1/item-characteristics/bulk & 200, 400, 401, 409, 500 & обновление несколько записей за раз \\ \hline 
+        any & get & /api/v1/item-characteristics/\{id\} & 200, 404, 500 & просмотр характеристики по id \\ \hline 
+        admin & patch & /api/v1/item-characteristics/\{id\} & 200, 400, 401, 404, 409, 500 & обновление характеристики по id \\ \hline 
+        admin & delete & /api/v1/item-characteristics/\{id\} & 200, 401, 404, 500 & удаление характеристики по id \\ \hline 
+        \multicolumn{5}{l}{Продолжение таблицы~\ref{tabl:swagger} на следующей странице} \\
+    \end{tabular}
+\end{sidewaystable}
+\begin{sidewaystable}
+    \small
+    % \caption{Повернутая таблица}
+
+    \begin{tabular}{|p{1cm}|p{1cm}|p{8.5cm}|p{4.8cm}|p{8cm}|}
+        \multicolumn{5}{c}{Продолжение таблицы~\ref{tabl:swagger}} \\
+        \hline
+        \multicolumn{1}{|c|}{Роль}
+        & \multicolumn{1}{c|}{Метод}
+        & \multicolumn{1}{c|}{Эндпоинт}
+        & \multicolumn{1}{c|}{HTTP статус}
+        & \multicolumn{1}{c|}{Назначение}
+        \\ \hline
+        admin & post & /api/v1/item-brands & 201, 400, 401, 409, 500 & создание бренда \\ \hline 
+        any & get & /api/v1/item-brands & 200, 500 & получение спика брендов \\ \hline  
+        admin & post & /api/v1/item-brands/bulk & 201, 400, 401, 409, 500 & создание несколько брендов за раз \\ \hline 
+        admin & put & /api/v1/item-brands/bulk & 200, 400, 401, 404, 409, 500 & обновление несколько бренда за раз \\ \hline
+        any & get & /api/v1/item-brands/\{id\} & 200, 404, 500 & просмотр бренда по id \\ \hline 
+        admin & patch & /api/v1/item-brands/\{id\} & 200, 400, 401, 409, 500 & обновление бренда по id \\ \hline 
+        admin & delete & /api/v1/item-brands/\{id\} & 200, 401, 404, 500 & удаление бренда по id \\ \hline 
+        any & delete & /api/v1/item-brands/filter-one/url/\{url\} & 200, 404, 500 & получение бренда по url \\ \hline 
+        admin & post & /api/v1/item-categories & 201, 400, 401, 409, 500 & создание категории \\ \hline 
+        any & get & /api/v1/item-categories & 200, 500 & просмотр списка категорий \\ \hline 
+        admin & post & /api/v1/item-categories/bulk & 201, 400, 401, 409, 500 & создание несколько категорий за раз \\ \hline 
+        admin & put & /api/v1/item-categories/bulk & 200, 400, 401, 400, 409, 500 & обновление несколько категорий за раз \\ \hline 
+        any & get & /api/v1/item-categories/\{id\} & 200, 404, 500 & просмотр категории по id \\ \hline 
+        admin & patch & /api/v1/item-categories/\{id\} & 200, 400, 401, 404, 409, 500 & обновление категории по id \\ \hline 
+        admin & delete & /api/v1/item-categories/\{id\} & 200, 401, 404, 500 & удаление категории по id \\ \hline 
+        any & delete & /api/v1/item-categories/filter-one/\{url\} & 200, 404, 500 & получение категори по url \\ \hline 
+        admin & post & /api/v1/items & 201, 400, 401, 409, 500 & создание товара \\ \hline 
+        any & get & /api/v1/items & 200, 500 & получение списка товаров \\ \hline 
+        admin & post & /api/v1/items/bulk & 201, 400, 401, 409, 500 & создание несколько товаров за раз \\ \hline 
+        admin & put & /api/v1/items/bulk & 200, 400, 401, 404, 409, 500 & обновление несколько товаров за раз \\ \hline 
+        any & get & /api/v1/items/filter-one/model/\{model\} & 200, 404, 500 & получение товара по модели \\ \hline 
+        any & post & /api/v1/items/filter/models & 200, 500 & получение товаров по списку моделей \\ \hline
+        any & post & /api/v1/items/filter/ids & 200, 500 & получение товаров по списку id \\ \hline  
+        any & get & /api/v1/items/search/\{search\} & 200, 500 & получение 5 штук товаров по поиску \\ \hline 
+        any & get & /api/v1/items/search-all/\{search\} & 200, 500 & получение товаров подходящие поиску \\ \hline 
+        \multicolumn{5}{l}{Продолжение таблицы~\ref{tabl:swagger} на следующей странице}
+    \end{tabular}
+\end{sidewaystable}
+\begin{sidewaystable}
+    \small
+    % \caption{Повернутая таблица}
+    \begin{tabular}{|p{1cm}|p{1cm}|p{8.5cm}|p{4.8cm}|p{8cm}|}
+        \multicolumn{5}{c}{Продолжение таблицы~\ref{tabl:swagger}} \\
+        \hline
+        \multicolumn{1}{|c|}{Роль}
+        & \multicolumn{1}{c|}{Метод}
+        & \multicolumn{1}{c|}{Эндпоинт}
+        & \multicolumn{1}{c|}{HTTP статус}
+        & \multicolumn{1}{c|}{Назначение}
+        \\ \hline
+        any & get & /api/v1/items/\{id\} & 200, 404, 500 & получение товара по id \\ \hline 
+        admin & patch & /api/v1/items/\{id\} & 200, 400, 401, 404, 409, 500 & обновление товара по id \\ \hline 
+        admin & delete & /api/v1/items/\{id\} & 200, 401, 404, 500 & удаление товара по id \\ \hline 
+        user & post & /api/v1/favorite-items/\{itemId\} & 201, 401, 500 & добавление товара в избранные \\ \hline 
+        user & delete & /api/v1/favorite-items/\{itemId\} & 200, 401, 404, 500 & удаление товара из избранных \\ \hline 
+        user & get & /api/v1/favorite-items & 200, 500 & получение списка избранных \\ \hline 
+        user & post & /api/v1/order & 201 & создание заявки \\ \hline 
+        any & get & /api/v1/order & 200 & получение списка заявок \\ \hline 
+        user & get & /api/v1/order/\{id\} & 200 & получение заявки по id \\ \hline 
+        moder & patch & /api/v1/order/\{id\}/completed & 200 & заявка выполнена \\ \hline 
+        user & patch & /api/v1/order/\{id\}/cancel & 200 & отменить заявку \\ \hline 
+        admin & post & /api/v1/articles & 201, 400, 401 & создание новости \\ \hline 
+        any & get & /api/v1/articles & 200, 500 & получение списка новостей \\ \hline 
+        admin & post & /api/v1/articles/bulk & 201, 400, 401, 409, 500 & создание несколько новостей за раз \\ \hline 
+        any & get & /api/v1/articles/filter-one/url/\{url\} & 200, 404, 500 & получение новости по ur; \\ \hline 
+        any & get & /api/v1/articles/\{id\} & 200, 404, 500 & получение новости по id \\ \hline 
+        admin & patch & /api/v1/articles/\{id\} & 200, 400 401, 404, 409, 500 & обновление новости по id \\ \hline 
+        admin & delete & /api/v1/articles/\{id\} & 200, 401, 404, 500 & удаление новости по id \\ \hline  
+        admin & post & /api/v1/contact-types & 201, 400, 401, 409, 500 & создание типа контакта \\ \hline 
+        any & get & /api/v1/contact-types & 200, 500 & просмотр списка типов контактов \\ \hline 
+        admin & post & /api/v1/contact-types/bulk & 201, 400, 401, 409, 500 & создание несколько типов контактов \\ \hline 
+        any & get & /api/v1/contact-types/\{id\} & 200, 404, 500 & просмотр типа контакта по id \\ \hline 
+        admin & patch & /api/v1/contact-types/\{id\} & 200, 400, 401, 404, 409, 500 & обновление типа контакта по id \\ \hline 
+        admin & delete & /api/v1/contact-types/\{id\} & 200, 401, 404, 500 & удаление типа контакта по id \\ \hline 
+        \multicolumn{5}{l}{Продолжение таблицы~\ref{tabl:swagger} на следующей странице}
+    \end{tabular}
+\end{sidewaystable}
+
+\begin{sidewaystable}
+    \small
+    % \caption{Повернутая таблица}
+    \begin{tabular}{|p{1.4cm}|p{1cm}|p{8.6cm}|p{4.8cm}|p{7.5cm}|}
+        \multicolumn{5}{c}{Продолжение таблицы~\ref{tabl:swagger}} \\
+        \hline
+        \multicolumn{1}{|c|}{Роль}
+        & \multicolumn{1}{c|}{Метод}
+        & \multicolumn{1}{c|}{Эндпоинт}
+        & \multicolumn{1}{c|}{HTTP статус}
+        & \multicolumn{1}{c|}{Назначение}
+        \\ \hline
+        admin & post & /api/v1/helpers & 201, 400, 401, 500 & создание помощника \\ \hline 
+        any & get & /api/v1/helpers & 200, 500 & получение списка помощников \\ \hline 
+        admin & post & /api/v1/helpers/bulk & 201, 400, 401, 500 & создание несколько помощников за раз \\ \hline 
+        any & get & /api/v1/helpers/\{id\} & 200, 404, 500 & просмотр помощника по id \\ \hline 
+        admin & patch & /api/v1/helpers/\{id\} & 200, 400, 401, 404, 500 & обновление помощника по id \\ \hline 
+        admin & delete & /api/v1/helpers/\{id\} & 200, 401, 404, 500 & удаление помощника по id \\ \hline 
+        manager & get & /api/v1/manager/orders & 201, 400, 401, 409, 500 & получение списка заказов \\ \hline 
+        manager & get & /api/v1/manager/orders/\{id\} & 200, 500 & получение заказа по id \\ \hline 
+        manager & get & /api/v1/manager/users/\{id\} & 201, 400, 401, 409, 500 & получение данных о пользователе \\ \hline 
+        manager & patch & /api/v1/manager/orders/\{id\}/is-canceled & 200, 400, 401, 404, 409, 500 & закрытие заказа \\ \hline 
+        manager & patch & /api/v1/manager/orders/\{id\}/is-sented & 200, 400, 401, 404, 409, 500 & отправка заказа \\ \hline 
+        manager & post & /api/v1/manager/order-statuses & 201, 400, 401, 500 & создание статуса заказа \\ \hline 
+        manager & delete & /api/v1/manager/ & 200, 401, 404, 500 & удаление статуса заказа по id \\
+                &        & \multicolumn{1}{r|}{order-statuses/\{id\}/orders/\{orderId\}} & & \\ \hline
+    \end{tabular}
+\end{sidewaystable}

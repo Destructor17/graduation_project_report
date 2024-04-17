@@ -1,0 +1,19 @@
+\usepackage{config/env}
+\usepackage{config/env.diplom}
+\usepackage{styles/TableOfContent}
+
+\def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~92~\envDiplomVersion}
+
+\ESKDletter{}{Д}{П}
+\ESKDcolumnI {\ESKDfontIII \envDiplomTitle \\ РЕЗУЛЬТАТЫ ЗАГРУЗКИ И ПРОВЕРКИ БД} % наименование изделия/документа
+\ESKDsignature {\envCode} % обозначение документа
+\ESKDcolumnIX {\ESKDfontV \envDiplomEnterprice} % наименование или различительный индекс предприятия
+\ESKDcolumnXIfI {\envDiplomStudentSurname} % Разраб.
+\ESKDcolumnXIfII {\envDiplomTeacherSurname} % Пров.
+\ESKDcolumnXIfIV {} % (пустая строка после Пров. и перед Н. контр.)
+\ESKDcolumnXIfV {\envDiplomEspdSurname} % Н. контр.
+\ESKDcolumnXIfVI {\envDiplomHeadCathedraSurname} % Утв.
+
+\usepackage{styles/codeList}
+
+\renewcommand {\thefigure} {B.\arabic{figure}} % Рисунок Буква.1

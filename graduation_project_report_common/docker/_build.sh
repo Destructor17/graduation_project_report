@@ -1,4 +1,9 @@
-set -ex
-cd $(dirname $0)/..
+cd $(dirname $0)/../..
 
-/usr/local/texlive/????/bin/*/xelatex -halt-on-error -output-directory=build main.tex 
+set -ex
+
+# export PATH="$(cd /usr/local/texlive/????/bin/*; pwd):$PATH"
+rm -f build/main.pdf
+make --directory=graduation_project_report_common/docker
+
+latexmk -pdf -halt-on-error -output-directory=build -interaction=nonstopmode graduation_project_report_common/main.tex

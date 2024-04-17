@@ -1,0 +1,27 @@
+\usepackage{config/env}
+\usepackage{config/env.diplom}
+\usepackage{styles/listing}
+\usepackage{styles/SectionMargins}
+\usepackage{styles/TableOfContent}
+
+\def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~90~\envDiplomVersion}
+
+\ESKDletter{}{Д}{П}
+\ESKDcolumnI {\ESKDfontIII \envDiplomTitle \\ ТЕХНИЧЕСКОЕ ЗАДАНИЕ} % наименование изделия/документа
+\ESKDsignature {\envCode} % обозначение документа
+\ESKDcolumnIX {\ESKDfontV \envDiplomEnterprice} % наименование или различительный индекс предприятия
+\ESKDcolumnXIfI {\envDiplomStudentSurname} % Разраб.
+\ESKDcolumnXIfII {\envDiplomTeacherSurname} % Пров.
+\ESKDcolumnXIfIV {} % (пустая строка после Пров. и перед Н. контр.)
+\ESKDcolumnXIfV {\envDiplomEspdSurname} % Н. контр.
+\ESKDcolumnXIfVI {\envDiplomHeadCathedraSurname} % Утв.
+
+\usepackage{styles/codeList}
+
+\usepackage{enumitem}
+\setitemize[1]{leftmargin=0cm,topsep=0pt}
+\setitemize[2]{leftmargin=0cm,topsep=0pt}
+
+\newenvironment{MyEnumerate}
+{\setlist[itemize,1]{leftmargin=0cm,topsep=0pt}\begin{enumerate}}
+{\end{enumerate}}
