@@ -6,4 +6,4 @@ set -ex
 rm -f build/main.pdf
 make --directory=graduation_project_report_common/docker
 
-latexmk -pdf -halt-on-error -output-directory=_build -interaction=nonstopmode graduation_project_report_common/main.tex
+latexmk -pdf -halt-on-error -output-directory=_build -interaction=nonstopmode

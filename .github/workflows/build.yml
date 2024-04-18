@@ -20,6 +20,6 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: main.pdf
+        name: graduation_project_report
         path: |
-          _build/main.pdf
+          _build/*.pdf

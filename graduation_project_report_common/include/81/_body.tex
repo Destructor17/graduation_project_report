@@ -28,18 +28,19 @@
     \newpage
 }}
 \newcommand{\GPRSection}[2]{{
+    \def \VarGPRSection {#2}
     \newpage
     \section{#1}
-    \input{#2}
+    \input{\VarGPRMainDir/sections/#2/main.tex}
     \newpage
 }}
 \newcommand{\GPRSubSection}[2]{{
     \subsection{#1}
-    \input{#2}
+    \input{\VarGPRMainDir/sections/\VarGPRSection/#2.tex}
 }}
 
-\GPRPhantomSection{ВВЕДЕНИЕ}{introduction.tex}
-\input{sections/all.tex}
+\GPRPhantomSection{ВВЕДЕНИЕ}{\VarGPRMainDir/introduction.tex}
+\input{\VarGPRMainDir/sections.tex}
 
 \phantomsection
 \addcontentsline{toc}{section}{СТЫРЕНО НАЧИНАЯ ОТСЮДА}
@@ -87,4 +88,4 @@
 \addcontentsline{toc}{section}{ОПЯТЬ НЕ СТЫРЕНО}
 \section*{ОПЯТЬ НЕ СТЫРЕНО}
 
-\GPRPhantomSection{ЗАКЛЮЧЕНИЕ}{conclusion.tex}
+\GPRPhantomSection{ЗАКЛЮЧЕНИЕ}{\VarGPRMainDir/conclusion.tex}
