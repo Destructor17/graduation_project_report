@@ -49,5 +49,32 @@
         "initials": "В. А.",
         "surname": "Головко"
     },
+    "economic_data": {
+        "lines_of_code": [
+            {
+                "func_code": 333,
+                "func_name": "Обработка файлов",
+                "estimate": 1100,
+                "actual": 100
+            },
+            {
+                "func_code": 369,
+                "func_name": "Обработка файлов 2: токийский дрифт",
+                "estimate": 1100,
+                "actual": 2000
+            }
+        ],
+        "dev_time_months": 10,
+        "base_rate": 250,
+        "dev_category": 11,
+        "premium_coefficient": 1.5,
+        "extra_payment_percents": 20,
+        "material_percents": 3,
+        "machine_hour_cost": 1.6,
+        "debug_portion": 0.8,
+        "other_spends_percents": 40,
+        "usage_spends_percents": 5,
+        "support_spends_percents": 5
+    },
     "year": "2024"
 }
