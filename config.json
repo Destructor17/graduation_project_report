@@ -64,17 +64,21 @@
                 "actual": 2000
             }
         ],
-        "dev_time_months": 10,
+        "dev_time_months": 3,
         "base_rate": 250,
-        "dev_category": 11,
-        "premium_coefficient": 1.5,
+        "dev_category": 7,
+        "dev_category_multiplier": 1.47,
+        "premium_coefficient": 1.4,
         "extra_payment_percents": 20,
         "material_percents": 3,
-        "machine_hour_cost": 1.6,
+        "machine_hour_cost": 5,
         "debug_portion": 0.8,
         "other_spends_percents": 40,
         "usage_spends_percents": 5,
-        "support_spends_percents": 5
+        "support_spends_percents": 5,
+        "profitability_percents": 25,
+        "tax_percents": 20,
+        "income_tax_percents": 20
     },
     "year": "2024"
 }
