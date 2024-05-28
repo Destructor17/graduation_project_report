@@ -52,16 +52,46 @@
     "economic_data": {
         "lines_of_code": [
             {
-                "func_code": 333,
-                "func_name": "Обработка файлов",
-                "estimate": 1100,
-                "actual": 100
+                "func_code": 109,
+                "func_name": "Управление вводом/выводом",
+                "estimate": 2400,
+                "actual": 1645
             },
             {
-                "func_code": 369,
-                "func_name": "Обработка файлов 2: токийский дрифт",
-                "estimate": 1100,
-                "actual": 2000
+                "func_code": 201,
+                "func_name": "Генерация структуры базы данных",
+                "estimate": 4300,
+                "actual": 18
+            },
+            {
+                "func_code": 205,
+                "func_name": "Обслуживание базы данных в интерактивном режиме",
+                "estimate": 6950,
+                "actual": 572
+            },
+            {
+                "func_code": 304,
+                "func_name": "Управление файлами",
+                "estimate": 5750,
+                "actual": 2686
+            },
+            {
+                "func_code": 402,
+                "func_name": "Генерация программ по описанию пользователей",
+                "estimate": 9880,
+                "actual": 1403
+            },
+            {
+                "func_code": 401,
+                "func_name": "Генерация рабочих программ",
+                "estimate": 3360,
+                "actual": 5273
+            },
+            {
+                "func_code": 601,
+                "func_name": "Проведение тестовых испытаний прикладных программ в интерактивном режиме",
+                "estimate": 4300,
+                "actual": 5532
             }
         ],
         "dev_time_months": 3,
