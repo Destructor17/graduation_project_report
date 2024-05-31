@@ -1,2 +1,4 @@
 /.vscode
 /_build
+*.drawio.bkp
+*.drawio.png.bkp
