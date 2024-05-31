@@ -10,9 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-        # - name: Submodules
-        #   run: |
-        #     git submodule update --init --recursive --single-branch
+    - name: Submodules
+      run: |
+        git submodule update --init --recursive --single-branch
 
     - name: Build
       run: |
