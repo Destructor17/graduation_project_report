@@ -1,3 +1,4 @@
 [submodule "graduation_project_report_common"]
 	path = graduation_project_report_common
 	url = https://github.com/Destructor17/graduation_project_report_common.git
+	branch = main

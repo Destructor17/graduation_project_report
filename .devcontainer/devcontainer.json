@@ -1,5 +1,5 @@
 {
-  "onCreateCommand": "git submodule update --init graduation_project_report_common/",
+  "onCreateCommand": "git submodule update --init graduation_project_report_common/ && sh graduation_project_report_common/build.sh",
   "customizations": {
     "codespaces": {
       "repositories": {
