@@ -1,8 +1,3 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
-			"command1": "pwd > /usr/local/secret"
-    }
-  }
+  "onCreateCommand": "pwd > /usr/local/secret"
 }
