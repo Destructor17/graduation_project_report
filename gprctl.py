@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+import shutil
+
+from_stdin = "__file__" not in globals() or __file__ == "<stdin>"
 
 
 def update_submodule():
@@ -18,18 +21,18 @@ def check_is_git_repo():
 def check_has_gpr_common_submodule():
     p = subprocess.run("git submodule status", shell=True, stdout=subprocess.PIPE)
     lines = p.stdout.decode().split("\n")
-    lines = list(
-        filter(lambda line: line.endswith("graduation_project_report_common"), lines)
-    )
+    lines = list(filter(lambda line: "graduation_project_report_common" in line, lines))
     return len(lines) == 1
 
 
-root_dir = os.path.dirname(os.path.realpath(__file__))
+root_dir = (
+    os.path.realpath(os.curdir)
+    if from_stdin
+    else os.path.dirname(os.path.realpath(__file__))
+)
 os.chdir(root_dir)
 if not os.path.exists(
-    os.path.join(
-        root_dir, "graduation_project_report_common", "scripts", "gprctl_main.py"
-    )
+    os.path.join(root_dir, "graduation_project_report_common", "scripts", "run.py")
 ):
     if not check_is_git_repo():
         ret_code = subprocess.call("git init", shell=True)
@@ -43,12 +46,22 @@ if not os.path.exists(
         if ret_code != 0:
             exit(ret_code)
     ret_code = subprocess.call(
-        "git submodule update --init graduation_project_report_common/",
-        shell=True,
+        "git submodule update --init graduation_project_report_common/", shell=True
     )
     if ret_code != 0:
         exit(ret_code)
 
-import graduation_project_report_common.scripts.gprctl_main as gprctl_main
+if from_stdin:
+    print(root_dir)
+    shutil.copy(
+        os.path.join(
+            root_dir, "graduation_project_report_common", "scripts", "gprctl.py"
+        ),
+        os.path.join(root_dir, "gprctl.py"),
+    )
+else:
+    print(__file__)
 
-gprctl_main.run()
+import graduation_project_report_common.scripts.run as run
+
+run.run()
