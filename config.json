@@ -95,7 +95,7 @@
         "base_rate": 250,
         "dev_category": 7,
         "dev_category_multiplier": 1.47,
-        "premium_coefficient": 1.4,
+        "premium_coefficient": 1.5,
         "extra_payment_percents": 20,
         "material_percents": 3,
         "machine_hour_cost": 5,
