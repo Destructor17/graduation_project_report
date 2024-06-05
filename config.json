@@ -109,6 +109,7 @@
     },
     "year": "2024",
     "program_text": {
+        "letter": "Б",
         "envelope_lines": [
             "МОДУЛЬНАЯ КРОССПЛАТФОРМЕННАЯ",
             "СРЕДА ВЫПОЛНЕНИЯ КОДА",
@@ -117,6 +118,12 @@
         "size": "? МБайт"
     },
     "illustration_count": 5,
-    "table_of_content_index_width": 32,
-    "attachment_pages_count": 4
+    "table_of_content_index_width": 24,
+    "attachments": [
+        {
+            "name": "Текст программы",
+            "letter": "А",
+            "pages_count": 4
+        }
+    ]
 }
