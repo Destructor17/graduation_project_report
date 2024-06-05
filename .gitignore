@@ -2,3 +2,6 @@
 /_build
 *.drawio.bkp
 *.drawio.png.bkp
+compare.sh
+compare*.png
+compare*.pdf
