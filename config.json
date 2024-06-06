@@ -29,8 +29,8 @@
     },
     "espd": {
         "info": "по ЕСПД",
-        "initials": "?. ?.",
-        "surname": "?"
+        "initials": "А. Г.",
+        "surname": "Демидович"
     },
     "recendent": {
         "info": "Рецензент",
@@ -109,7 +109,7 @@
     },
     "year": "2024",
     "program_text": {
-        "letter": "Б",
+        "letter": "А",
         "envelope_lines": [
             "МОДУЛЬНАЯ КРОССПЛАТФОРМЕННАЯ",
             "СРЕДА ВЫПОЛНЕНИЯ КОДА",
