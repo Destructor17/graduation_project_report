@@ -44,9 +44,9 @@ SharedArrayBuffer является объектом, ссылающимся на
 Два объекта SharedArrayBuffer могут ссылаться на одни и те же данные, даже если один из них находится в основной части программы, а второй -- в Web Worker.
 Из-за существования уязвимости Spectre, создание объекта SharedArrayBuffer требует соблюдения условий, обеспечивающих достаточный уровень безопасности и конфиденциальности \cite{SharedArrayBuffer}. В большинстве случаев достаточно добавить следующие HTTP-заголовочники:
 
--- ~Cross-Origin-Opener-Policy со значением same-origin 
+-- ~Cross-Origin-Opener-Policy со значением same-origin;
 
--- ~Cross-Origin-Embedder-Policy со значением require-corp
+-- ~Cross-Origin-Embedder-Policy со значением require-corp.
 
 Atomics предоставляет некоторые методы для работы с SharedArrayBuffer.
 В рамках дипломного проекта использованы методы Atomics.wait и Atomics.notify.
